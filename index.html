@@ -3,83 +3,285 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>破防茶.Z · 个人网站（设计稿预览）</title>
-  <meta name="description" content="破防茶.Z 的个人网站设计稿预览：首页、关于我、我的文章、我的作品四个页面。">
+  <title>破防茶.Z · 能源工程师 / 个人体系构建者</title>
+  <meta name="description" content="破防茶.Z 的个人网站。能源工程师，在倒班与日常之间搭建自己的成长与财务系统，记录 AI 实践、财务复盘、作品与尚未解决的迷茫。">
   <meta name="theme-color" content="#070b12">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="破防茶.Z · 个人网站">
+  <meta property="og:title" content="破防茶.Z · 记录一个正在变化的人">
   <meta property="og:description" content="能源工程师 · 个人体系构建者 · 长期主义实践者。记录学习、实践与复盘。">
-  <style>
-    :root { color-scheme: dark; --bg:#070b12; --panel:#0a101b; --text:#e6edf7; --muted:#8c9bad; --cyan:#52e5d4; --line:#1b2a3a; }
-    * { box-sizing: border-box; }
-    body { margin:0; background:var(--bg); color:var(--text); font-family:"Microsoft YaHei","Noto Sans SC",sans-serif; }
-    header { position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 28px; background:rgba(10,16,27,.96); border-bottom:1px solid var(--line); backdrop-filter:blur(14px); }
-    .brand { font:700 15px/1.4 Consolas,monospace; letter-spacing:.06em; color:var(--cyan); white-space:nowrap; }
-    .note { margin-top:4px; color:var(--muted); font-size:12px; }
-    nav { display:flex; flex-wrap:wrap; gap:10px; }
-    button { appearance:none; border:1px solid var(--line); border-radius:7px; padding:10px 16px; background:#0d1623; color:#a7b5c5; font:14px/1 "Microsoft YaHei",sans-serif; cursor:pointer; }
-    button:hover { border-color:var(--cyan); color:var(--cyan); }
-    button.active { border-color:var(--cyan); background:var(--cyan); color:#07110f; font-weight:700; }
-    main { max-width:1440px; margin:0 auto; padding:32px 24px 64px; }
-    .meta { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:18px; }
-    h1 { margin:0; font-size:24px; line-height:1.4; }
-    .hint { margin:6px 0 0; color:var(--muted); font-size:13px; line-height:1.7; }
-    .open-link { color:var(--cyan); font-size:13px; text-decoration:none; white-space:nowrap; }
-    .open-link:hover { text-decoration:underline; }
-    .page { display:none; margin:0; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#070b12; box-shadow:0 24px 80px rgba(0,0,0,.28); }
-    .page.active { display:block; }
-    .page img { display:block; width:100%; height:auto; }
-    footer { margin-top:20px; color:#5d6c7d; font:12px/1.7 Consolas,"Microsoft YaHei",monospace; }
-    @media (max-width:800px) {
-      header { position:relative; align-items:flex-start; flex-direction:column; padding:18px; }
-      main { padding:20px 12px 40px; }
-      .meta { align-items:flex-start; flex-direction:column; }
-      h1 { font-size:21px; }
-      button { padding:9px 13px; }
+  <meta property="og:url" content="https://user-1ai.online/">
+  <meta property="og:image" content="https://user-1ai.online/assets/images/city.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://user-1ai.online/">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <link rel="preload" as="image" href="assets/images/city.webp" type="image/webp">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "破防茶.Z",
+      "url": "https://user-1ai.online/",
+      "jobTitle": "能源工程师",
+      "description": "能源工程师、个人体系构建者、长期主义实践者。",
+      "knowsAbout": ["个人成长体系", "财务系统", "AI 工作流", "摄影"],
+      "sameAs": [
+        "https://space.bilibili.com/477656345",
+        "https://www.douyin.com/user/MS4wLjABAAAARsKHxCiokW7go4h_4yL8OeoObOVve43-YIZMQt8ah6CPb5tMn_4T-Ae6JYR8bgQL"
+      ]
     }
-  </style>
+  </script>
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-  <header>
-    <div>
-      <div class="brand">破防茶.Z / DESIGN PREVIEW</div>
-      <div class="note">v2 工作版 · 四个页面静态视觉稿 · 已同步全部后续修改</div>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="破防茶.Z 首页">Z / CHARGING LOG</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="sr-only">打开菜单</span>
+      </button>
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="主导航">
+        <a href="index.html" aria-current="page">首页</a>
+        <a href="about.html">关于我</a>
+        <a href="articles.html">我的文章</a>
+        <a href="works.html">我的作品</a>
+      </nav>
     </div>
-    <nav aria-label="设计稿页面切换">
-      <button class="active" data-page="home">首页</button>
-      <button data-page="about">关于我</button>
-      <button data-page="articles">我的文章</button>
-      <button data-page="works">我的作品</button>
-    </nav>
   </header>
-  <main>
-    <div class="meta">
-      <div>
-        <h1 id="page-title">首页｜设计稿预览</h1>
-        <p class="hint">这是 v2 工作版的长图式静态预览，用于检查当前视觉效果；页面内的导航、文章阅读和作品筛选尚未实现。</p>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">HELLO, INTERNET. WELCOME TO MY CORNER.</p>
+          <h1>我是<br>破防茶.Z<span class="accent" aria-hidden="true"></span></h1>
+          <p class="hero-role">能源工程师 · 个人体系构建者 · 长期主义实践者</p>
+          <p class="hero-lead">在倒班与日常之间，搭建自己的成长与财务系统。记录学习、实践、复盘，也记录那些尚未解决的迷茫。</p>
+          <div class="tag-row" aria-label="个人标签">
+            <span class="tag">体系构建</span>
+            <span class="tag tag--magenta">长期主义</span>
+            <span class="tag tag--neutral">真实复盘</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="works.html">看看我的作品</a>
+            <a class="btn btn--ghost" href="articles.html">读读我的想法</a>
+          </div>
+        </div>
+
+        <aside class="terminal-card reveal" aria-label="当前状态">
+          <div class="terminal-top">
+            <span class="terminal-title">CURRENTLY.EXE</span>
+            <span class="terminal-id"><span class="status-dot" aria-hidden="true"></span>Z / CHARGING LOG</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-identity">
+              <img class="avatar" src="assets/images/avatar.webp" width="58" height="58" alt="破防茶.Z 的电池猫头像">
+              <div>
+                <strong>破防茶.Z</strong>
+                <span>ENERGY ENGINEER / ZHANGZHOU</span>
+              </div>
+            </div>
+            <dl class="terminal-list">
+              <div class="terminal-item">
+                <dt>01 / BUILDING</dt>
+                <dd>用 AI 辅助学习与内容生产，持续完善个人成长体系</dd>
+              </div>
+              <div class="terminal-item">
+                <dt>02 / THINKING</dt>
+                <dd>如何建立可长期运转的个人成长与财务系统</dd>
+              </div>
+              <div class="terminal-item">
+                <dt>03 / FEELING</dt>
+                <dd>方向仍在形成，但每天都在比昨天更清楚一点</dd>
+              </div>
+            </dl>
+            <p class="terminal-note">不追求永远正确，只保持诚实更新。</p>
+          </div>
+        </aside>
       </div>
-      <a class="open-link" id="open-image" href="home.png?v=15" target="_blank" rel="noopener">单独打开原图</a>
-    </div>
-    <figure class="page active" id="home"><img src="home.png?v=15" alt="个人网站首页完整设计稿"></figure>
-    <figure class="page" id="about"><img src="about.png?v=15" alt="个人网站关于我页面完整设计稿" loading="lazy"></figure>
-    <figure class="page" id="articles"><img src="articles.png?v=15" alt="个人网站我的文章页面完整设计稿" loading="lazy"></figure>
-    <figure class="page" id="works"><img src="works.png?v=15" alt="个人网站我的作品页面完整设计稿" loading="lazy"></figure>
-    <footer>© 2026 破防茶.Z · DESIGN PREVIEW / V2</footer>
+    </section>
+
+    <figure class="city-band">
+      <picture>
+        <source srcset="assets/images/city.webp" type="image/webp">
+        <img src="assets/images/city.jpg" width="1536" height="952" alt="夜色中的漳州城市天际线与桥梁" fetchpriority="high">
+      </picture>
+      <figcaption class="sr-only">漳州城市夜景，作为首页的独立视觉带。</figcaption>
+    </figure>
+
+    <section class="section" aria-labelledby="now-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">NOW / LIFE IN PROGRESS</p>
+            <h2 id="now-title">此刻的我，不止于工作</h2>
+            <p>一些正在发生、尚未完成，也不一定正确的事。</p>
+          </div>
+          <span class="section-heading__meta">LAST UPDATED / 2026.11.12</span>
+        </div>
+
+        <div class="now-grid">
+          <article class="now-card reveal">
+            <p class="now-card__label">01 / DOING</p>
+            <h3>AI 工具与个人成长体系</h3>
+            <p>用 AI 辅助学习、整理与内容输出，同时搭建个人成长和财务系统。</p>
+          </article>
+          <article class="now-card reveal">
+            <p class="now-card__label">02 / CONSUMING</p>
+            <h3>DeepSeek / 一人公司 / AI</h3>
+            <p>关注如何借助 AI 提高学习与输出效率，同时保留自己的判断。</p>
+          </article>
+          <article class="now-card reveal">
+            <p class="now-card__label">03 / THINKING</p>
+            <h3>财务自由与人生方向</h3>
+            <p>既想解决物质自由，也在思考未来会在哪里、想过怎样的生活。</p>
+          </article>
+          <article class="now-card reveal">
+            <p class="now-card__label">04 / WANDERING</p>
+            <h3>还不知道何时财务自由</h3>
+            <p>也不知道未来会在哪里；允许暂时迷茫，但不停止学习、实践和复盘。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--rule" aria-labelledby="works-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">SELECTED WORKS / THINGS I MADE</p>
+            <h2 id="works-title">作品是思考留下的痕迹</h2>
+            <p>不只展示结果，也记录为什么做、如何做，以及下一次会怎样改进。</p>
+          </div>
+          <a class="text-link" href="works.html">查看全部作品 / ALL WORKS</a>
+        </div>
+
+        <div class="card-grid">
+          <a class="project-card project-card--featured reveal" href="works.html#project-z">
+            <div class="project-card__cover cover--cyan">
+              <span class="project-card__code">PROJECT / 01</span>
+              <span class="project-card__number" aria-hidden="true">01</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Z的充电日记</h3>
+              <p class="project-card__desc">以个人成长体系为长期母题，从财务系统开始，记录学习、实践与复盘。</p>
+              <div class="project-card__meta"><span>发起 / 内容 / 体系构建</span><span>2026</span></div>
+            </div>
+          </a>
+
+          <a class="project-card reveal" href="works.html#project-finance">
+            <div class="project-card__cover cover--magenta">
+              <span class="project-card__code">PROJECT / 02</span>
+              <span class="project-card__number" aria-hidden="true">02</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">财务系统 v1</h3>
+              <p class="project-card__desc">从留住钱、建立缓冲到看懂钱，搭建可迭代的个人财务认知框架。</p>
+              <div class="project-card__meta"><span>学习 / 实践 / 复盘</span><span>2026</span></div>
+            </div>
+          </a>
+
+          <a class="project-card reveal" href="works.html#project-growth">
+            <div class="project-card__cover cover--violet">
+              <span class="project-card__code">PROJECT / 03</span>
+              <span class="project-card__number" aria-hidden="true">03</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">个人成长体系</h3>
+              <p class="project-card__desc">把零散输入、判断与行动整理成长期可迭代的系统，目前仍在持续构建。</p>
+              <div class="project-card__meta"><span>构建中</span><span>2026</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--rule" aria-labelledby="writing-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">WRITING / NOTES &amp; REFLECTIONS</p>
+            <h2 id="writing-title">写下那些还不确定的答案</h2>
+            <p>关于工作、创作、生活，以及仍在形成中的看法。</p>
+          </div>
+          <a class="text-link" href="articles.html">查看全部文章 / ALL POSTS</a>
+        </div>
+
+        <div class="article-list">
+          <a class="article-row reveal" href="articles/you-are-a-company.html">
+            <span class="article-row__index" aria-hidden="true">01</span>
+            <span>
+              <span class="article-row__title">你在打工还是在经营，这是两个完全不同的概念</span>
+              <span class="article-row__excerpt">从职业收入与资产收入的区别，理解工作、事业与长期积累。</span>
+            </span>
+            <span class="article-row__meta"><strong>财务 / 思考</strong><span>个人笔记</span></span>
+          </a>
+          <a class="article-row reveal" href="https://www.bilibili.com/opus/1172614831623110677" target="_blank" rel="noopener noreferrer">
+            <span class="article-row__index" aria-hidden="true">02</span>
+            <span>
+              <span class="article-row__title">7个月，减重36斤，体脂降低7%，我做了什么</span>
+              <span class="article-row__excerpt">从朴素减重到系统学习，再到饮食与力量训练结合，一次长期主义的亲身实践。</span>
+            </span>
+            <span class="article-row__meta"><strong>生活 / 复盘</strong><span>B站 · 2026.02.23</span></span>
+          </a>
+          <a class="article-row reveal" href="https://www.zhihu.com/question/475781359/answer/2028919449" target="_blank" rel="noopener noreferrer">
+            <span class="article-row__index" aria-hidden="true">03</span>
+            <span>
+              <span class="article-row__title">高二开始补救：把偏科问题拆开，再逐科重建</span>
+              <span class="article-row__excerpt">从偏科与基础差距出发，讨论高二阶段如何拆解问题、重建数理化学习路径。</span>
+            </span>
+            <span class="article-row__meta"><strong>学习 / 方法</strong><span>知乎 · 持续更新</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--rule" aria-labelledby="about-title">
+      <div class="container about-summary">
+        <div class="reveal">
+          <p class="eyebrow">ABOUT ME / STILL BECOMING</p>
+          <h2 id="about-title">我不是一个<br>已经被定义好的人</h2>
+          <p class="about-summary__text">我有一些已经做得不错的事，也有仍在学习、反复怀疑和想要重新开始的部分。比起一份完美履历，我更愿意让你看到这些经历如何真实地塑造了此刻的我。</p>
+          <div class="hero-actions">
+            <a class="btn btn--quiet btn--ghost" href="about.html">更多关于我</a>
+          </div>
+        </div>
+
+        <aside class="facts-card reveal">
+          <p class="facts-card__title">A FEW HONEST FACTS</p>
+          <dl class="facts-list">
+            <div><dt>正在学习</dt><dd>搭建并迭代个人成长体系</dd></div>
+            <div><dt>在意的事</dt><dd>长期主义、真实表达与独立判断</dd></div>
+            <div><dt>恢复能量</dt><dd>拍照与整理笔记</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
   </main>
-  <script>
-    const names = { home:"首页", about:"关于我", articles:"我的文章", works:"我的作品" };
-    const buttons = [...document.querySelectorAll("button[data-page]")];
-    function showPage(id) {
-      if (!names[id]) id = "home";
-      document.querySelectorAll(".page").forEach(page => page.classList.toggle("active", page.id === id));
-      buttons.forEach(button => button.classList.toggle("active", button.dataset.page === id));
-      document.getElementById("page-title").textContent = names[id] + "｜设计稿预览";
-      document.getElementById("open-image").href = id + ".png?v=15";
-      history.replaceState(null, "", "#" + id);
-      window.scrollTo({ top:0, behavior:"instant" });
-    }
-    buttons.forEach(button => button.addEventListener("click", () => showPage(button.dataset.page)));
-    showPage(location.hash.slice(1) || "home");
-  </script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <p class="eyebrow eyebrow--plain">END OF PAGE / START OF A CONVERSATION</p>
+          <a class="footer-brand" href="index.html">Z / CHARGING LOG</a>
+          <p class="footer-tagline">这里记录一个仍在变化的人。</p>
+        </div>
+        <div class="footer-links" aria-label="联系方式与社交链接">
+          <a href="mailto:user_zh@foxmail.com">EMAIL</a>
+          <a href="https://www.douyin.com/user/MS4wLjABAAAARsKHxCiokW7go4h_4yL8OeoObOVve43-YIZMQt8ah6CPb5tMn_4T-Ae6JYR8bgQL" target="_blank" rel="noopener noreferrer">DOUYIN</a>
+          <a href="https://space.bilibili.com/477656345" target="_blank" rel="noopener noreferrer">BILIBILI</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>破防茶.Z / 2026 · 保留真实，持续更新</span>
+        <span>允许变化，也允许暂时没有答案。</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

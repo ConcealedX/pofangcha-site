@@ -43,7 +43,7 @@
   <header>
     <div>
       <div class="brand">破防茶.Z / DESIGN PREVIEW</div>
-      <div class="note">四个页面的静态视觉稿 · 无需登录 · 已含赛博朋克城市视觉带</div>
+      <div class="note">v2 工作版 · 四个页面静态视觉稿 · 已同步全部后续修改</div>
     </div>
     <nav aria-label="设计稿页面切换">
       <button class="active" data-page="home">首页</button>
@@ -56,15 +56,15 @@
     <div class="meta">
       <div>
         <h1 id="page-title">首页｜设计稿预览</h1>
-        <p class="hint">这是长图式静态预览，用于检查视觉效果；页面内的导航、文章阅读和作品筛选尚未实现。</p>
+        <p class="hint">这是 v2 工作版的长图式静态预览，用于检查当前视觉效果；页面内的导航、文章阅读和作品筛选尚未实现。</p>
       </div>
-      <a class="open-link" id="open-image" href="home.png" target="_blank" rel="noopener">单独打开原图</a>
+      <a class="open-link" id="open-image" href="home.png?v=15" target="_blank" rel="noopener">单独打开原图</a>
     </div>
-    <figure class="page active" id="home"><img src="home.png" alt="个人网站首页完整设计稿"></figure>
-    <figure class="page" id="about"><img src="about.png" alt="个人网站关于我页面完整设计稿" loading="lazy"></figure>
-    <figure class="page" id="articles"><img src="articles.png" alt="个人网站我的文章页面完整设计稿" loading="lazy"></figure>
-    <figure class="page" id="works"><img src="works.png" alt="个人网站我的作品页面完整设计稿" loading="lazy"></figure>
-    <footer>© 2026 破防茶.Z · DESIGN PREVIEW / STATIC EXPORT</footer>
+    <figure class="page active" id="home"><img src="home.png?v=15" alt="个人网站首页完整设计稿"></figure>
+    <figure class="page" id="about"><img src="about.png?v=15" alt="个人网站关于我页面完整设计稿" loading="lazy"></figure>
+    <figure class="page" id="articles"><img src="articles.png?v=15" alt="个人网站我的文章页面完整设计稿" loading="lazy"></figure>
+    <figure class="page" id="works"><img src="works.png?v=15" alt="个人网站我的作品页面完整设计稿" loading="lazy"></figure>
+    <footer>© 2026 破防茶.Z · DESIGN PREVIEW / V2</footer>
   </main>
   <script>
     const names = { home:"首页", about:"关于我", articles:"我的文章", works:"我的作品" };
@@ -74,7 +74,7 @@
       document.querySelectorAll(".page").forEach(page => page.classList.toggle("active", page.id === id));
       buttons.forEach(button => button.classList.toggle("active", button.dataset.page === id));
       document.getElementById("page-title").textContent = names[id] + "｜设计稿预览";
-      document.getElementById("open-image").href = id + ".png";
+      document.getElementById("open-image").href = id + ".png?v=15";
       history.replaceState(null, "", "#" + id);
       window.scrollTo({ top:0, behavior:"instant" });
     }

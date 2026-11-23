@@ -38,6 +38,16 @@
 
   const filterGroups = document.querySelectorAll("[data-filter-group]");
 
+  document.querySelectorAll("[data-filter-jump]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const group = document.querySelector("[data-filter-group]");
+      const target = group?.querySelector(`[data-filter="${button.dataset.filterJump}"]`);
+      if (!group || !target) return;
+      target.click();
+      group.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
   filterGroups.forEach((group) => {
     const buttons = [...group.querySelectorAll("[data-filter]")];
     const cards = [...group.querySelectorAll("[data-category]")];
